@@ -96,7 +96,7 @@ const richButtonsPlugin = ({
   };
 
   inline_styles.forEach((inlineStyle) => {
-    configured[`${inlineStyle.label}Button`] = decorateComponentWithProps(
+    configured[`${inlineStyle.label.replace(' ', '_')}Button`] = decorateComponentWithProps(
       StyleButton, {
         store,
         bindToState: store.bindToState.bind(store),
@@ -107,7 +107,7 @@ const richButtonsPlugin = ({
   });
 
   block_types.forEach((blockType) => {
-    configured[`${blockType.label}Button`] = decorateComponentWithProps(
+    configured[`${blockType.label.replace(' ', '_')}Button`] = decorateComponentWithProps(
       BlockButton, {
         store,
         bindToState: store.bindToState.bind(store),
